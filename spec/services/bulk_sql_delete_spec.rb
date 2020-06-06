@@ -7,7 +7,7 @@ describe BulkSqlDelete, type: :service do
       WHERE notifications.id IN (
         SELECT notifications.id
         FROM notifications
-        WHERE created_at < '#{Time.zone.now}'
+        WHERE created_at < '#{Time.current}'
         LIMIT 1
       )
     SQL
